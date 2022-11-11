@@ -89,12 +89,13 @@ def jksb(driver):
 
     wait.until(expected_conditions.text_to_be_present_in_element((By.XPATH, "//*[@id='form_command_bar']/li[1]"), '提交'))
     logging.info("提交健康申报")
+    
     try:
         wait.until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[@id='form_command_bar']/li[1]")) ).click()
     except Exception as e:
         print(e)
         raise e
-        
+
     result=""
     try:
         wait.until(expected_conditions.text_to_be_present_in_element
